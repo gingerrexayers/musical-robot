@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+}
+
+header {
+  padding: 1em;
+  font-size: 1.5em;
+}
+
+#welcome {
+  display: inline-block;
+}
+
+nav {
+  float: right;
+}
+
+main {
+  width: 95%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#pokedme {
+  margin: 1em 0;
+  padding: 1em;
+  border: 1px solid #000;
+}
+
+table {
+  width:100%;
+  border-collapse: collapse;
+  text-align: center;
+  border: 1px solid #000;
+}
+
+th, td {
+  padding: .5em;
+}
+
+tr {
+  border-bottom: 1px solid #333;
+}
