@@ -18,7 +18,7 @@ def register(request):
 
         if result[0]:
             request.session['id'] = result[1].id
-            request.session.pop('errors')
+            request.session['errors'] = []
             return redirect(reverse('login:success'))
         else:
             request.session['errors'] = result[1]
@@ -29,8 +29,11 @@ def login(request):
         result = User.manager.login(request.POST)
         if result[0]:
             request.session['id'] = result[1].id
-            request.session.pop('errors')
+            request.session['errors'] = []
             return redirect(reverse('login:success'))
+        else:
+            request.session['errors'] = result[1]
+            return redirect(reverse('login:index'))
 
 def logout(request):
     request.session.pop('id')

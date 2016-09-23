@@ -38,7 +38,7 @@ class UserManager(models.Manager):
         if not u[0]:
             errors.append('Invalid email or password')
             return (False, errors)
-        if not bcrypt.hashpw(form_data['password'].encode('utf-8'), u[0].password.encode('utf-8')):
+        if not bcrypt.hashpw(form_data['password'].encode('utf-8'), u[0].password.encode('utf-8')) == u[0].password:
             errors.append('Invalid email or password')
             return (False, errors)
         else:
